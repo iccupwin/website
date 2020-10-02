@@ -1,0 +1,377 @@
+<% var rootPath = '../../'; %>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <%- include(rootPath + 'partials/includes'); %>
+    </head>
+    <link rel="stylesheet" type="text/css" href="css/page.css"/>
+    <body>
+        <div id="particles-js">
+
+        </div>  
+        <style>
+        canvas { 
+            display: block; vertical-align: bottom; 
+         } 
+#particles-js { position:absolute; 
+            width: 100%; 
+            height: 100%; 
+            background-color: #c70f1b; 
+            background-image: url(""); 
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            background-position: 50% 50%; 
+         }  
+.count-particles { 
+             background: #000022; 
+             position: absolute; 
+             top: 48px; 
+             left: 0; 
+             width: 80px; 
+             color: #13E8E9; 
+             font-size: .8em; 
+             text-align: left; 
+             text-indent: 4px; 
+             line-height: 14px; 
+             padding-bottom: 2px; 
+             font-family: Helvetica, Arial, sans-serif; 
+             font-weight: bold; 
+         } 
+.js-count-particles { 
+             font-size: 1.1em; 
+         } #stats, 
+.count-particles { 
+             -webkit-user-select: none; 
+             margin-top: 5px; 
+             margin-left: 5px; 
+         } 
+         #stats
+         { 
+             border-radius: 3px 3px 0 0; 
+             overflow: hidden; } 
+.count-particles{ 
+             border-radius: 0 0 3px 3px; }</style>
+        <style> 
+       
+       html, body{ background-color:#b61924; }	
+
+body
+{ 
+	background-image: url('../images/background.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	width:100%;
+	background-size:cover;
+	height:100%;
+	min-height:1000px;
+	overflow:hidden;
+	font-family: 'quicksandlight', Helvetica, Arial;
+	color:#FFFFFF;
+	text-shadow: -1px -1px 4px rgba(0, 0, 0, .35);
+    filter: dropshadow(color=#000000, offx=1, offy=1);
+}
+
+header
+{
+	
+	margin-top:30px;
+	position:absolute;
+	z-index:5;
+	width:420px;
+	padding-top:10px;
+	padding-bottom:10px;
+
+}
+
+h1{
+	
+	font-size:36px;
+	letter-spacing:-2.5px;
+	margin-left:30px;
+}
+
+h3{
+	
+	font-size:16px;
+	letter-spacing:-1.5px;
+	margin-top:5px;
+	margin-left:35px;
+}
+
+#fps
+{
+	margin-top:5px;
+	margin-left:35px;
+}
+
+a
+{
+	color:rgba( 255, 255, 255, .65 );
+	text-decoration: none;
+}
+
+a:hover
+{
+	color:rgba( 255, 255, 255, 1 );
+}
+
+/* hardware accelatator class */	
+	.trans3d
+	{
+		-webkit-transform-style: preserve-3d;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform-style: preserve-3d;
+		-moz-transform: translate3d(0, 0, 0);
+		-ms-transform-style:preserve-3d;
+		-ms-transform: translate3d(0, 0, 0);
+		transform-style:preserve-3d;
+		transform: translate3d(0, 0, 0);
+
+		/*-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-ms-backface-visibility:hidden;
+		backface-visibility:hidden;*/
+	}
+	
+	#contentContainer
+	{
+		position:absolute;
+		margin-left:-500px;
+		margin-top:-500px;
+		left:50%;
+		top:50%;
+		width:1000px;
+		height:1000px;
+	}
+	
+	#carouselContainer
+	{
+		position:absolute;
+		margin-left:-500px;
+		margin-top:-500px;
+		left:50%;
+		top:50%;
+		width:1000px;
+		height:1000px;
+	}
+	
+	.carouselItem
+	{
+		width:320px;
+		height:130px;
+		position:absolute;
+		left:50%;
+		top:50%;
+		margin-left:-160px;
+		margin-top:-90px;
+		visibility:hidden;
+	}
+	
+	.carouselItemInner
+	{
+		width:320px;
+		height:130px;
+		position:absolute;
+		background-color:rgba(255, 255, 255, .75);
+		border:10px solid rgba(255, 255, 255, .5);
+		color:#b61924; 
+		font-size:50px;
+		left:50%;
+		top:50%;
+		margin-left:-160px;
+		margin-top:-90px;
+		text-align:center;
+		padding-top:50px;
+		
+	}
+        </style>
+       
+        <link rel="stylesheet" href="css/page.css">
+        <link rel='stylesheet' href='https://raw.githubusercontent.com/JohnBlazek/codepen-resources/master/3d-carousel/css/stylesheet.css'>
+
+        <div id="contentContainer" class="trans3d"> 
+            <section id="carouselContainer" class="trans3d">
+                <figure id="item1" class="carouselItem trans3d"><div class="carouselItemInner trans3d">1</div></figure>
+                <figure id="item2" class="carouselItem trans3d"><div class="carouselItemInner trans3d">2</div></figure>
+                <figure id="item3" class="carouselItem trans3d"><div class="carouselItemInner trans3d">3</div></figure>
+                <figure id="item4" class="carouselItem trans3d"><div class="carouselItemInner trans3d">4</div></figure>
+                <figure id="item5" class="carouselItem trans3d"><div class="carouselItemInner trans3d">5</div></figure>
+                <figure id="item6" class="carouselItem trans3d"><div class="carouselItemInner trans3d">6</div></figure>
+                <figure id="item7" class="carouselItem trans3d"><div class="carouselItemInner trans3d">7</div></figure>
+                <figure id="item8" class="carouselItem trans3d"><div class="carouselItemInner trans3d">8</div></figure>
+                <figure id="item9" class="carouselItem trans3d"><div class="carouselItemInner trans3d">9</div></figure>
+                <figure id="item10" class="carouselItem trans3d"><div class="carouselItemInner trans3d">10</div></figure>
+                <figure id="item11" class="carouselItem trans3d"><div class="carouselItemInner trans3d">11</div></figure>
+                <figure id="item12" class="carouselItem trans3d"><div class="carouselItemInner trans3d">12</div></figure>	
+            </section>
+            </div>
+          
+       
+    </body>
+     <%- include(rootPath + 'partials/nav'); %>
+    <script>
+        // set and cache variables
+		var w, container, carousel, item, radius, itemLength, rY, ticker, fps; 
+		var mouseX = 0;
+		var mouseY = 0;
+		var mouseZ = 0;
+		var addX = 0;
+		
+		
+		// fps counter created by: https://gist.github.com/sharkbrainguy/1156092,
+		// no need to create my own :)
+		var fps_counter = {
+			
+			tick: function () 
+			{
+				// this has to clone the array every tick so that
+				// separate instances won't share state 
+				this.times = this.times.concat(+new Date());
+				var seconds, times = this.times;
+        
+				if (times.length > this.span + 1) 
+				{
+					times.shift(); // ditch the oldest time
+					seconds = (times[times.length - 1] - times[0]) / 1000;
+					return Math.round(this.span / seconds);
+				} 
+				else return null;
+			},
+ 
+			times: [],
+			span: 20
+		};
+		var counter = Object.create(fps_counter);
+		
+		
+		
+		$(document).ready( init )
+		
+		function init()
+		{
+			w = $(window);
+			container = $( '#contentContainer' );
+			carousel = $( '#carouselContainer' );
+			item = $( '.carouselItem' );
+			itemLength = $( '.carouselItem' ).length;
+			fps = $('#fps');
+			rY = 360 / itemLength;
+			radius = Math.round( (250) / Math.tan( Math.PI / itemLength ) );
+			
+			// set container 3d props
+			TweenMax.set(container, {perspective:600})
+			TweenMax.set(carousel, {z:-(radius)})
+			
+			// create carousel item props
+			
+			for ( var i = 0; i < itemLength; i++ )
+			{
+				var $item = item.eq(i);
+				var $block = $item.find('.carouselItemInner');
+				
+        //thanks @chrisgannon!        
+        TweenMax.set($item, {rotationY:rY * i, z:radius, transformOrigin:"50% 50% " + -radius + "px"});
+				
+				animateIn( $item, $block )						
+			}
+			
+			// set mouse x and y props and looper ticker
+			window.addEventListener( "mousemove", onMouseMove, false );
+			ticker = setInterval( looper, 1000/60 );			
+		}
+		
+		function animateIn( $item, $block )
+		{
+			var $nrX = 360 * getRandomInt(2);
+			var $nrY = 360 * getRandomInt(2);
+				
+			var $nx = -(2000) + getRandomInt( 4000 )
+			var $ny = -(2000) + getRandomInt( 4000 )
+			var $nz = -4000 +  getRandomInt( 4000 )
+				
+			var $s = 1.5 + (getRandomInt( 10 ) * .1)
+			var $d = 1 - (getRandomInt( 8 ) * .1)
+			
+			TweenMax.set( $item, { autoAlpha:1, delay:$d } )	
+			TweenMax.set( $block, { z:$nz, rotationY:$nrY, rotationX:$nrX, x:$nx, y:$ny, autoAlpha:0} )
+			TweenMax.to( $block, $s, { delay:$d, rotationY:0, rotationX:0, z:0,  ease:Expo.easeInOut} )
+			TweenMax.to( $block, $s-.5, { delay:$d, x:0, y:0, autoAlpha:1, ease:Expo.easeInOut} )
+		}
+		
+		function onMouseMove(event)
+		{
+			mouseX = -(-(window.innerWidth * .5) + event.pageX) * .0025;
+			mouseY = -(-(window.innerHeight * .5) + event.pageY ) * .01;
+			mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5) + event.pageY ) - 200);
+		}
+		
+		// loops and sets the carousel 3d properties
+		function looper()
+		{
+			addX += mouseX
+			TweenMax.to( carousel, 1, { rotationY:addX, rotationX:mouseY, ease:Quint.easeOut } )
+			TweenMax.set( carousel, {z:mouseZ } )
+			fps.text( 'Framerate: ' + counter.tick() + '/60 FPS' )	
+		}
+		
+		function getRandomInt( $n )
+		{
+			return Math.floor((Math.random()*$n)+1);	
+		}
+    </script>
+    <script>
+         particlesJS("particles-js", 
+                   {"particles":
+                   {"number":
+                   {"value":80,"density":
+                   {"enable":true,"value_area":800}},
+                   "color":{"value":"#ffffff"},
+                   "shape":{"type":"circle","stroke":
+                   {"width":0,"color":"#000000"},
+                   "polygon":{"nb_sides":5},
+                   "image":{"src":"img/github.svg","width":100,"height":100}},
+                   "opacity":{"value":0.5,"random":false,"anim":
+                   {"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},
+                   "size":{"value":3,"random":true,"anim":
+                   {"enable":false,"speed":40,"size_min":0.1,"sync":false}},
+                   "line_linked":
+                   {"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},
+                   "move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":
+                   {"enable":false,"rotateX":600,"rotateY":1200}}},
+                   "interactivity":{"detect_on":"canvas","events":
+                   {"onhover":
+                   {"enable":true,"mode":"repulse"},
+                   "onclick":{"enable":true,"mode":"push"},
+                   "resize":true},"modes":
+                   {"grab":{"distance":400,"line_linked":
+                   {"opacity":1}},"bubble":
+                   {"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},
+                   "repulse":{"distance":200,"duration":0.4},
+                   "push":{"particles_nb":4},
+                   "remove":{"particles_nb":2}}},
+                   "retina_detect":true});
+        var count_particles, stats, update; stats = new Stats; stats.setMode(0); 
+        stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; 
+        stats.domElement.style.top = '0px'; 
+        document.body.appendChild(stats.domElement); 
+        count_particles = document.querySelector('.js-count-particles'); 
+        update = function() { stats.begin(); 
+            stats.end(); 
+            if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { 
+                count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+             } requestAnimationFrame(update); 
+            }; requestAnimationFrame(update);;
+    </script>
+     <script src='https://raw.githubusercontent.com/JohnBlazek/codepen-resources/master/3d-carousel/js/libs.min.js'></script>
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script>
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script  src="./script.js"></script>
+     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+     <script src="includes/jquery.min.js"></script>
+    <!-- Odometr includes -->
+    <link rel="stylesheet" href="includes/odometer-theme-default.css"/>
+    <script src="includes/odometer.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/carousel.js"></script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+     
+</html>

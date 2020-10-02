@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/page.css"/>
+    <link rel="stylesheet" type="text/css" href="css/coutdown.css"/>
+    <% include ../partials/includes %>
+  </head>
+  <body>
+    <% include ../partials/nav %>
+     <div id="particles-js">
+
+     </div>  
+     
+     <style>
+
+/
+    </style>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+    <script>
+       
+    </script>
+    <div class="homeImg">
+        <div class="homeDiv center">
+            <h1 class="titleMain">FleirFox</h1>
+            <h3>an electronics hobbyist passionate for innovative technology and digital content</h3>
+        </div>
+        <div class="homeSouth">
+            <h4><a class="stealthLink subPmin padX0" href="#">Read More</a></h4>
+            <button class="smoothScrollBtn" type="button"><img src="/images/Down-Arrow-White.png" width="30"/></button>
+        </div>
+    </div>
+
+    <div class="container-fluid aboutMe" >
+        <div class="container aboutMe">
+            <div class="row rowPad" >
+                <div class="col-md-4">
+                    <img src="/images/main.jpg" class="circleImg"></img>
+                </div>
+                <div class="col-md-8">
+                    <p class="pad20">Welcome to my website.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid aboutMe" >
+    <!-- <div class="container"> -->
+        <div class="box" >
+                 <div class="clock"></div>
+                 <p>Clock</p>
+             </div>
+     
+             <div class="box">
+                 <div class="hourglass"></div>
+                 <p>Hourglass</p>
+             </div>
+     
+             <div class="box">
+                 <div class="loader1"></div>
+                 <p>Loader 1</p>
+             </div>
+     
+             <div class="box">
+                 <div class="loader2"></div>
+                 <p>loader 2</p>
+             </div>
+     
+             <div class="box">
+                 <div class="loader3"></div>
+                 <p>loader 3</p>
+             </div>
+     
+             <div class="box">
+                 <div class="loader4"></div>
+                 <p>loader 4</p>
+             </div>
+     
+             <div class="box">
+                 <div class="loader5"></div>
+                 <p>loader 5</p>
+             </div>
+     
+             <div class="box">
+                 <div class="loader6"></div>
+                 <p>loader 6</p>
+             </div>
+     
+             <div class="box">
+                 <div class="loader7"></div>
+                 <p>loader 7</p>
+             </div>
+     
+             <div class="box">
+                 <div class="loader8"></div>
+                 <p>loader 8</p>
+             </div>
+     
+             <div class="box">
+                 <div class="loader9"></div>
+                 <p>loader 9</p>
+             </div>
+     
+             <div class="box">
+                 <div class="loader10"></div>
+                 <p>loader 10 </p>
+             </div>
+     </div>
+    </div>
+    
+   
+
+    <div class="container-fluid videoBack">
+        <div class="container padY60 padX0">
+            <h2 class="leftTitle whiteText subTitle padtop0">FILMS</h2>
+            <div class="row">
+                <div class="col-lg-2 tilePadMin">
+                    <div class="centerDiv">
+                        <h3 class= "odometer tileTitle odoSubs whiteText" id="odometer" style="display:block">0</h3>
+                        <h5 class="tileDesc whiteText">Subscribers</h5>
+                    </div>
+                </div>
+                <div class="col-lg-2 tilePadMin">
+                    <div class="centerDiv">
+                        <h3 class="odometer tileTitle odoViews whiteText" style="display:block">0</h3>
+                        <h5 class="tileDesc whiteText">Views</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 tilePadMin">
+                    <div class="centerDiv">
+                        <h3 class="tileTitle whiteText">5+ years</h3>
+                        <h5 class="tileDesc whiteText">Creating digital content</h5>
+                    </div>
+                </div>
+                <div class="col-lg-2 tilePadMin">
+                    <div class="centerDiv">
+                        <h3 class="tileTitle whiteText">Partner</h3>
+                        <h5 class="tileDesc whiteText">with Much Studios</h5>
+                    </div>
+                </div>
+                <div class="col-lg-2 tilePadMin">
+                    <div class="centerDiv">
+                        <h3 class="tileTitle whiteText">500+</h3>
+                        <h5 class="tileDesc whiteText">Videos</h5>
+                    </div>
+                </div>
+                <a class="btn btn-lg centerBtn learnFilmsBtn" href="films" role="button">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-cout coutdown">
+        
+        <div class="coutdown" id="countdown">
+            <h1 id="headline">Countdown to my birthday:</h1>
+            <!-- <div class="textt"> -->
+          <ul>
+            <li><span id="days"></span>days</li>
+            <li><span id="hours"></span>Hours</li>
+            <li><span id="minutes"></span>Minutes</li>
+            <li><span id="seconds"></span>Seconds</li>
+          </ul>
+          </div>    
+        </div>
+        <div class="message">
+          <div id="content">
+            <span class="emoji">🥳</span>
+            <span class="emoji">🎉</span>
+            <span class="emoji">🎂</span>
+          </div>
+        </div>
+      </div>
+   
+    <% include ../partials/footer %>
+    <script src="includes/jquery.min.js"></script>
+    <!-- Odometr includes -->
+    <link rel="stylesheet" href="includes/odometer-theme-default.css"/>
+    <script src="includes/odometer.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/carousel.js"></script>
+    <script type="text/javascript" src="scripts/backgroundmain.js"></script>
+
+
+  </body>
+</html>
