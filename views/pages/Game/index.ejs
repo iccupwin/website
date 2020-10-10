@@ -1,0 +1,78 @@
+<% var rootPath = '../../'; %>
+<!DOCTYPE HTML>
+<html>
+  <%- include(rootPath + 'partials/includes'); %>
+
+    <%- include(rootPath + 'partials/nav'); %>
+    <head>
+      <meta charset="UTF-8">
+      <title>CodePen - game</title>  
+      <link rel="stylesheet" type="text/css" href="css/game.css"/>
+
+    </head>
+    <body>
+    <!-- partial:index.partial.html -->
+<h2>Simple JavaScript Game</h2>
+<!-- partial --> 
+        </body>
+    
+        <script type="text/javascript" src="/scripts/game.js"></script>
+    <style>
+      body {
+    background: #222;
+  }
+  
+  h2 {
+    color: #666;
+    font-family: monospace;
+    text-align: center;
+    padding-top: 9%;
+  }
+  
+  .background {
+    table-layout: fixed;
+    border-spacing: 0;
+  }
+  
+  .background td {
+    padding: 0;
+  }
+  
+  .lava, .actor {
+    background: #e55;
+  }
+  
+  .wall {
+    background: #444;
+    border: solid 3px #333;
+    box-sizing: content-box;
+  }
+  
+  .actor {
+    position: absolute;
+  }
+  
+  .coin {
+    background: #e2e838;
+    border-radius: 50%;
+  }
+  
+  .player {
+    background: #335699;
+    box-shadow: none;
+  }
+  
+  .lost .player {
+    background: #a04040;
+  }
+  
+  .won .player {
+    background: green;
+  }
+  
+  .game {
+    position: relative;
+    overflow: hidden;
+  }
+    </style>
+</html>
