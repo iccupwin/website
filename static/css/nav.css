@@ -1,3 +1,4 @@
+
 .custom-toggler.navbar-toggler {
     border-color: rgb(220,220,220);
 }
@@ -10,7 +11,9 @@ body .scrollN, body .scrollN:hover {
     color: white;
     font-family: 'Gravity-Regular';
 }
-
+.navbar {
+        position: fixed;
+}
 .navbar-toggler-icon {
     color: black;
 }
@@ -63,3 +66,6 @@ body .scrollN, body .scrollN:hover {
 
     }
 }
+
+
+

@@ -1,0 +1,1537 @@
+<% var rootPath = '../../'; %>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <%- include(rootPath + 'partials/includes'); %>
+        <link rel="stylesheet" type="text/css" href="css/portfolio.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet" type="text/css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<style>
+  body {
+    background: -webkit-gradient(linear, left top, left bottom, from(#333), color-stop(70%, #111));
+    background: linear-gradient(#333, #111 70%);
+    color: #000;
+    font-family: 'Inconsolata';
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+  }
+  @media (max-width: 1024px) {
+    body {
+      background: #1D1D1D;
+    }
+  }
+  
+  * a {
+    text-decoration: none;
+    color: #000;
+  }
+  * a:hover {
+    text-decoration: none;
+    color: #000;
+  }
+  * a.bold {
+    font-size: 16px;
+    letter-spacing: 0px;
+    text-decoration: underline;
+  }
+  
+  * span.bold {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 1024px) {
+    .mobileHide {
+      display: none !important;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .desktopHide {
+      display: none !important;
+    }
+  }
+  
+  .fader {
+    background: #111;
+    display: block;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+  }
+  
+  .mainContainer {
+    margin: 0 auto;
+    max-width: 1920px;
+    overflow: hidden;
+    top: 0;
+  }
+  
+  .btnContainer {
+    display: block;
+    height: 50px;
+    position: relative;
+    top: 0px;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transition: all 0.75s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: all 0.75s cubic-bezier(0.55, 0, 0.1, 1);
+    width: 175px;
+  }
+  
+  .boxBtn {
+    cursor: pointer;
+  }
+  .boxBtn:hover .btnContainer {
+    top: 25px;
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+  .boxBtn:hover .btnContainer .btnTop {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    opacity: 1;
+    font-weight: 700;
+  }
+  .boxBtn:hover .btnContainer .btnFace {
+    box-shadow: none;
+    opacity: 0.8;
+  }
+  
+  .myBtn {
+    background: #000;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: #F1CA10;
+    display: inline-block;
+    font-size: 20px;
+    height: 50px;
+    padding: 12px 0 14px;
+    text-align: center;
+    letter-spacing: 1px;
+    position: absolute;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    width: 175px;
+  }
+  .myBtn.btnFace {
+    -webkit-transition: all 0.75s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: all 0.75s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+  .myBtn.btnTop {
+    background: transparent;
+    border: 2px solid #000;
+    box-shadow: none;
+    color: #000;
+    opacity: 0.3;
+    -webkit-transform: rotateX(90deg) translateY(-25px) translateZ(25px);
+            transform: rotateX(90deg) translateY(-25px) translateZ(25px);
+    -webkit-transition: all 0.75s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: all 0.75s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+  .myBtn .icon {
+    position: relative;
+    top: 3px;
+  }
+  
+  .letSpaceNone, .lastLetter {
+    letter-spacing: 0;
+  }
+  
+  @-webkit-keyframes flash {
+    0% {
+      background: transparent;
+    }
+    49% {
+      background: transparent;
+    }
+    50% {
+      background: #FFF;
+    }
+    100% {
+      background: #FFF;
+    }
+  }
+  
+  @keyframes flash {
+    0% {
+      background: transparent;
+    }
+    49% {
+      background: transparent;
+    }
+    50% {
+      background: #FFF;
+    }
+    100% {
+      background: #FFF;
+    }
+  }
+  header {
+    background-attachment: fixed;
+    background-image: url(http://theaftermath.xposedbones.com/img/headerBackground.jpg);
+    background-position: 0px -278px;
+    background-repeat: no-repeat;
+    display: block;
+    height: 475px;
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: 1920px;
+    z-index: 1000;
+  }
+  @media (min-width: 1920px) {
+    header {
+      height: 575px;
+    }
+    header .triangle {
+      -webkit-transform: translate(-50%, -670px);
+              transform: translate(-50%, -670px);
+    }
+    header .my {
+      font-size: 70px;
+    }
+    header .resume {
+      font-size: 100px;
+    }
+  }
+  @media (max-width: 1024px) {
+    header {
+      background-image: url(http://theaftermath.xposedbones.com/img/headerBackground-mobile.jpg);
+      background-position: top center;
+      background-attachment: scroll;
+      background-size: cover;
+      top: -10px;
+    }
+  }
+  header.sticky {
+    position: fixed;
+  }
+  header.sticky #myName {
+    bottom: 45px;
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  header #headDarker {
+    background: rgba(0, 0, 0, 0.1);
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    max-width: 1920px;
+  }
+  @media (max-width: 1200px) {
+    header #headDarker {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+  header .svgHolder .triangle {
+    display: block;
+    height: auto;
+    position: absolute;
+    -webkit-transform: translate(-50%, -700px);
+            transform: translate(-50%, -700px);
+    width: 1200px;
+  }
+  @media (max-width: 1024px) {
+    header .svgHolder .triangle {
+      width: 800px;
+      -webkit-transform: translate(-20%, -300px);
+              transform: translate(-20%, -300px);
+    }
+  }
+  @media (max-width: 700px) {
+    header .svgHolder .triangle {
+      width: 450px;
+      -webkit-transform: translate(-20%, -175px);
+              transform: translate(-20%, -175px);
+    }
+  }
+  @media (max-width: 700px) and (orientation: landscape) {
+    header .svgHolder .triangle {
+      width: 400px;
+      -webkit-transform: translate(-10%, -250px);
+              transform: translate(-10%, -250px);
+    }
+  }
+  
+  header .svgHolder .resuTitle {
+    display: block;
+    margin: 20px 0 0 55px;
+    position: absolute;
+  }
+  header .svgHolder .resuTitle span {
+    display: block;
+    letter-spacing: 5px;
+    line-height: 1;
+    margin: 0;
+    position: relative;
+  }
+  header .svgHolder .resuTitle span.my {
+    font-size: 60px;
+  }
+  header .svgHolder .resuTitle span.resume {
+    font-size: 90px;
+  }
+  @media (max-width: 1024px) {
+    header .svgHolder .resuTitle {
+      position: relative;
+      right: 0;
+      top: 120px;
+      margin: 10px 0 0 27.5px;
+    }
+  }
+  @media (max-width: 700px) {
+    header .svgHolder .resuTitle {
+      top: 50px;
+    }
+    header .svgHolder .resuTitle span.my {
+      font-size: 45px;
+    }
+    header .svgHolder .resuTitle span.resume {
+      font-size: 60px;
+    }
+  }
+  @media (max-width: 700px) and (orientation: landscape) {
+    header .svgHolder .resuTitle {
+      top: 5px;
+    }
+    header .svgHolder .resuTitle span.my {
+      font-size: 30px;
+    }
+    header .svgHolder .resuTitle span.resume {
+      font-size: 50px;
+    }
+  }
+  
+  header #myName {
+    bottom: 64px;
+    color: #F1CA10;
+    display: block;
+    left: 55px;
+    position: absolute;
+    -webkit-transform-origin: bottom left;
+            transform-origin: bottom left;
+  }
+  header #myName span {
+    color: #F1CA10;
+    display: block;
+    line-height: 1;
+    -webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+  header #myName span.mainName {
+    font-size: 35px;
+  }
+  header #myName span.subName {
+    font-size: 18px;
+  }
+  @media (max-width: 1024px) {
+    header #myName {
+      bottom: 40px;
+      left: 27.5px;
+    }
+    header #myName span.mainName {
+      font-size: 50px;
+    }
+    header #myName span.subName {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 1024px) and (orientation: landscape) {
+    header #myName {
+      left: auto;
+      right: 13.75px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    header #myName {
+      bottom: 40px;
+      left: 13.75px;
+    }
+    header #myName span.mainName {
+      font-size: 30px;
+    }
+    header #myName span.subName {
+      font-size: 16px;
+    }
+  }
+  header .menuBurger {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 35px;
+    padding: 9.1666666667px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 10000;
+    overflow: hidden;
+    box-sizing: initial;
+  }
+  header .menuBurger .bar {
+    width: 35px;
+    height: 3px;
+    display: block;
+    position: absolute;
+    background: #f1ca10;
+    -webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+  header .menuBurger .bar.topBar {
+    -webkit-transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
+  }
+  header .menuBurger .bar.midBar {
+    -webkit-transform: translateY(11px) rotate(0deg);
+            transform: translateY(11px) rotate(0deg);
+  }
+  header .menuBurger .bar.btmBar {
+    -webkit-transform: translateY(22px) rotate(0deg);
+            transform: translateY(22px) rotate(0deg);
+  }
+  header .menuBurger.burgerClosed .topBar {
+    -webkit-transform: translateY(11px) rotate(45deg);
+            transform: translateY(11px) rotate(45deg);
+  }
+  header .menuBurger.burgerClosed .midBar {
+    -webkit-transform: translateY(11px) rotate(225deg);
+            transform: translateY(11px) rotate(225deg);
+    background: rgba(241, 202, 16, 0);
+  }
+  header .menuBurger.burgerClosed .btmBar {
+    -webkit-transform: translateY(11px) rotate(-45deg);
+            transform: translateY(11px) rotate(-45deg);
+  }
+  header .chooseLang {
+    position: fixed;
+    padding: 10px;
+    font-size: 25px;
+    background: #000;
+    color: #F1CA10;
+    top: 0;
+    right: 0;
+    text-transform: uppercase;
+  }
+  header .chooseLang:hover {
+    background: #F1CA10;
+    color: #000;
+  }
+  header .chooseLang:active {
+    background: #000;
+    color: #fff;
+  }
+  header #headMenu {
+    bottom: 0;
+    display: block;
+    padding-left: 33.3333%;
+    position: absolute;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    width: 100%;
+    max-width: 1920px;
+  }
+  header #headMenu .chooseLang {
+    position: absolute;
+    display: inline-block;
+    padding: 10px;
+    font-size: 25px;
+    background: #000;
+    right: auto;
+    left: 0;
+    color: #F1CA10;
+    text-transform: uppercase;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+  }
+  header #headMenu .chooseLang:hover {
+    background: #F1CA10;
+    color: #000;
+  }
+  header #headMenu ul {
+    display: block;
+    font-size: 0px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    width: 66%;
+  }
+  header #headMenu ul .menuTitle {
+    font-size: 32px;
+    display: block;
+    position: relative;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    letter-spacing: 3px;
+  }
+  header #headMenu ul li {
+    box-shadow: 4px 4px 8px #000;
+    display: inline-block;
+    margin-right: 5%;
+    position: relative;
+    width: 30%;
+    z-index: 100;
+    border-radius: 1px;
+    overflow: hidden;
+  }
+  header #headMenu ul li:last-of-type {
+    margin-right: 0;
+  }
+  header #headMenu ul li:hover a {
+    background: rgba(34, 34, 34, 0.8);
+    color: #F1CA10;
+    font-weight: 500;
+  }
+  header #headMenu ul li:active a {
+    background: #000;
+    color: #fff;
+  }
+  header #headMenu ul li a {
+    background: #F1CA10;
+    color: #000;
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+  }
+  @media (max-width: 1024px) {
+    header #headMenu {
+      display: block;
+      position: fixed;
+      height: 100%;
+      background: rgba(0, 0, 0, 0);
+      top: 0;
+      left: -100%;
+      padding: 0;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-transition-delay: 0.1s;
+              transition-delay: 0.1s;
+    }
+    header #headMenu ul {
+      width: 40%;
+      height: 100%;
+      margin: 0;
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+      background: #F1CA10;
+      padding: 160px 0;
+      -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+      transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+      transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+      transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+      -webkit-transition-delay: 0.1s;
+              transition-delay: 0.1s;
+    }
+    header #headMenu ul li {
+      display: block;
+      box-shadow: none;
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+    }
+    header #headMenu ul li:first-child {
+      border-top: 1px solid rgba(0, 0, 0, 0.7);
+    }
+    header #headMenu ul li a {
+      padding: 20px 0;
+      font-size: 20px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+  @media (max-width: 767px) {
+    header #headMenu ul {
+      width: 60% !important;
+    }
+  }
+  @media (max-width: 767px) and (orientation: landscape) {
+    header #headMenu ul {
+      padding: 30px 0;
+    }
+  }
+  
+  @media (min-width: 1025px) and (max-width: 1200px) {
+    header #headMenu ul li a {
+      font-size: 18px;
+    }
+  }
+  header #headMenu.menuOpened {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  header #headMenu.menuOpened ul {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  
+  #__bs_notify__ {
+    bottom: 0;
+    top: auto !important;
+  }
+  
+  .mainContent {
+    max-width: 1920px;
+    position: relative;
+    overflow: hidden;
+  }
+  .mainContent section {
+    padding: 0 55px;
+    margin: 150px 0;
+  }
+  @media (max-width: 1024px) {
+    .mainContent section {
+      padding: 0 13.75px;
+      margin: 75px 0;
+    }
+  }
+  @media (max-width: 700px) {
+    .mainContent section {
+      padding: 0 9.1666666667px;
+      z-index: 1;
+    }
+  }
+  .mainContent .darker {
+    background: rgba(16, 14, 4, 0.6);
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    -webkit-transition: background 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: background 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    width: 100%;
+    z-index: 10;
+  }
+  .mainContent .container {
+    width: 100%;
+  }
+  .mainContent .container .half {
+    padding: 0;
+  }
+  .mainContent .container .half a {
+    padding: 0;
+  }
+  .mainContent .container .half .yellowContain {
+    display: block;
+    position: relative;
+    height: 100%;
+  }
+  .mainContent .container .half .yellowBox {
+    background: #F1CA10;
+    display: table;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+  }
+  .mainContent .container .half .yellowBox .boxTitle {
+    background: #000;
+    box-shadow: 4px 4px 8px #000;
+    color: #F1CA10;
+    display: inline-block;
+    font-size: 28px;
+    left: -27.5px;
+    letter-spacing: 1px;
+    line-height: 1;
+    padding: 12px 55px;
+    position: absolute;
+    text-align: center;
+    top: 40px;
+  }
+  .mainContent .container .half .yellowBox .boxTitle:after {
+    border-color: #000000 transparent transparent transparent;
+    border-style: solid;
+    border-width: 42px 21px 0 21px;
+    content: '';
+    height: 0;
+    left: 8px;
+    position: absolute;
+    top: 40px;
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+    width: 0;
+    z-index: -1;
+  }
+  .mainContent .container .half .yellowBox .boxTitle:before {
+    border-color: #000000 transparent transparent transparent;
+    border-style: solid;
+    border-width: 42px 21px 0 21px;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 8px;
+    top: 40px;
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+    width: 0;
+    z-index: -1;
+  }
+  .mainContent .container .half .yellowBox .ctaBtn {
+    bottom: 32px;
+    position: absolute;
+    right: 27.5px;
+  }
+  .mainContent .container .half .boxText {
+    display: table-cell;
+    font-weight: 700;
+    padding: 0 27.5px;
+    text-align: justify;
+    vertical-align: middle;
+  }
+  @media (max-width: 991px) {
+    .mainContent .container .half .yellowBox {
+      height: auto;
+    }
+    .mainContent .container .half .yellowBox .boxTitle {
+      top: 20px;
+      font-size: 24px;
+      padding: 8px 55px;
+    }
+    .mainContent .container .half .yellowBox .boxTitle:after, .mainContent .container .half .yellowBox .boxTitle:before {
+      display: none;
+    }
+    .mainContent .container .half .boxText {
+      padding: 100px 25px 80px;
+      font-size: 12px;
+    }
+  }
+  .mainContent .container .picGrid {
+    overflow: hidden;
+  }
+  .mainContent .container .picGrid a {
+    position: relative;
+  }
+  .mainContent .container .picGrid a img {
+    max-width: 100%;
+  }
+  .mainContent .container .picGrid a .icon {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 35px;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 62%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+    -webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: 100;
+  }
+  .mainContent .container .picGrid a .tileTitle {
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
+    height: 37px;
+    left: 50%;
+    letter-spacing: 10px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    z-index: 11;
+  }
+  .mainContent .container .picGrid a .tileTitle:before, .mainContent .container .picGrid a .tileTitle:after {
+    background: rgba(255, 255, 255, 0.8);
+    content: '';
+    display: block;
+    height: 2px;
+    position: relative;
+    -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+    -webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    width: 0%;
+    z-index: 11;
+  }
+  .mainContent .container .picGrid a .tileTitle:after {
+    float: right;
+    margin-top: 3px;
+  }
+  @media (min-width: 1201px) {
+    .mainContent .container .picGrid a:hover .darker {
+      background: rgba(16, 14, 4, 0.95);
+    }
+    .mainContent .container .picGrid a:hover .tileTitle {
+      color: white;
+      -webkit-transform: translate(-50%, -50%) scale(1.1);
+              transform: translate(-50%, -50%) scale(1.1);
+    }
+    .mainContent .container .picGrid a:hover .tileTitle:before, .mainContent .container .picGrid a:hover .tileTitle:after {
+      width: 100%;
+    }
+    .mainContent .container .picGrid a:hover .icon {
+      opacity: 1;
+      -webkit-transition-delay: 0.5s;
+              transition-delay: 0.5s;
+    }
+  }
+  @media (max-width: 768px) {
+    .mainContent .container .picGrid a .tileTitle {
+      font-size: 18px;
+    }
+    .mainContent .container .picGrid a .contact {
+      font-size: 24px;
+    }
+  }
+  @media (max-width: 700px) {
+    .mainContent .container .picGrid a .tileTitle {
+      letter-spacing: 5px;
+      height: auto;
+    }
+  }
+  @media (max-width: 768px) {
+    .mainContent #myWork {
+      margin-top: 40px;
+    }
+  }
+  .mainContent #aboutMe .darker {
+    background: rgba(16, 14, 4, 0.6);
+  }
+  .mainContent #aboutMe .half img {
+    min-height: 500px;
+    width: 100%;
+  }
+  .mainContent #aboutMe .half .boxTitle {
+    left: auto;
+    right: -27.5px;
+  }
+  .mainContent #aboutMe .half .statsDiv {
+    color: #fff;
+    display: block;
+    height: 100%;
+    padding: 15px 27.5px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .mainContent #aboutMe .half .statsDiv h2 {
+    background: #000;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    padding: 5px 10px;
+    position: absolute;
+  }
+  .mainContent #aboutMe .half .statsDiv h2:after {
+    -webkit-animation: flash 1s infinite;
+            animation: flash 1s infinite;
+    background: #fff;
+    content: '';
+    display: inline-block;
+    height: 25px;
+    margin-left: 1px;
+    opacity: 0.8;
+    position: relative;
+    top: 2px;
+    width: 16px;
+  }
+  .mainContent #aboutMe .half .statsDiv .dataProg {
+    display: block;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  .mainContent #aboutMe .half .statsDiv .statHolder {
+    width: 100%;
+    padding: 0 55px;
+  }
+  .mainContent #aboutMe .half .statsDiv .statHolder h4 {
+    display: block;
+    position: relative;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  .mainContent #aboutMe .half .statsDiv .statHolder .bar {
+    background: rgba(0, 0, 0, 0.5);
+    display: block;
+    height: 12px;
+    margin: 0 auto 25px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .mainContent #aboutMe .half .statsDiv .statHolder .bar .progressBar {
+    width: 0;
+    height: 100%;
+    background: rgba(241, 202, 16, 0.9);
+  }
+  @media (max-width: 600px) {
+    .mainContent #aboutMe #gifCont {
+      overflow: hidden;
+    }
+    .mainContent #aboutMe .half img {
+      position: relative;
+      left: -95px;
+      width: auto;
+    }
+    .mainContent #aboutMe .half .statsDiv {
+      padding: 0px;
+    }
+    .mainContent #aboutMe .half .statsDiv h2 {
+      left: 7px;
+    }
+    .mainContent #aboutMe .half .statsDiv .statHolder {
+      padding: 0 20px;
+    }
+  }
+  .mainContent #whyMe .yellowBox h2 {
+    background: #000;
+    box-shadow: 4px 4px 8px #000;
+    color: #F1CA10;
+    display: block;
+    margin: 0 auto 40px;
+    padding: 5px 35px;
+    position: relative;
+    width: 175px;
+  }
+  .mainContent #whyMe .myBtn {
+    padding: 12px 0px 14px;
+  }
+</style>
+    </head>
+    <body>
+        <%- include(rootPath + 'partials/nav'); %>
+        <div class="fader"></div>
+        <div class="mainContainer">
+          <header id="header">
+            <div id="headDarker"></div>
+      
+            <div id="svgCont" class="svgHolder">
+      
+              <svg class="triangle" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1445.23px" height="1521.59px" viewBox="0 0 1445.23 1521.59" enable-background="new 0 0 1445.23 1521.59" xml:space="preserve">
+                <polygon fill="#F0CA17" points="0.036,1521.627 240.117,0.036 1445.269,959.454 "/>
+              </svg>
+      
+              <div class="resuTitle">
+                <span class="my">my</span>
+                <span class="resume">RESUME</span>
+              </div>
+            </div><!--svgCont-->
+      
+            <div id="myName">
+              <span class="mainName">Bakhtiyar</span>
+              <span class="subName">&lt;Front-end Developer/&gt;</span>
+            </div>
+      
+            <div id="burger" class="menuBurger desktopHide">
+              <div class="bar topBar"></div>
+              <div class="bar midBar"></div>
+              <div class="bar btmBar"></div>
+            </div>
+            
+            <nav id="headMenu" class="menu">
+      
+              <ul>  
+                <span class="menuTitle desktopHide">MENU</span>
+                <li>
+                  <a href="#myWork">My Work</a>
+                </li>
+                <li>
+                  <a href="#aboutMe">About Me</a>
+                </li>
+                <li>
+                  <a href="#whyMe">Conclusion</a>
+                </li>
+              </ul>
+      
+            </nav>
+          </header>
+      
+      
+          <div id="mainContent" class="mainContent">
+      
+      
+      
+      
+      
+      
+            <!--myWork Section-->
+            <section id="myWork" class="container">
+      
+              <div id="yellowMyWork" class="half col-md-6 col-lg-7">
+                <div class="yellowContain">
+                  <div class="yellowBox"><span class="boxTitle">My Work</span>
+                    <div class="boxText">
+                      <p>Here are a few of self-initiated projects I've made in the past few months. I'm now seeking for a first job and as a matter of fact, the number of projects I've participated to is a bit limited for the moment.</p>
+                    </div>
+      
+                    <!--3D Button-->
+                    <div style="display: none;" class="ctaBtn rigthBtn boxBtn mobileHide">
+                      <div class="btnContainer">
+                        <div class="myBtn btnFace">See More<span class="icon icon-keyboard-arrow-right"></span></div>
+                        <div class="myBtn btnTop">See More<span class="icon icon-keyboard-arrow-right"></span></div>
+                      </div>
+                    </div>
+      
+                  </div>
+                </div>
+              </div>
+      
+              <!-- <div id="picGrid" class="half picGrid rightSqr col-md-6 col-lg-5">
+      
+                <a href="http://mathieulavoie-lamer.com/contax/" target="_blank" class="col-xs-12">
+                  <img src="http://theaftermath.xposedbones.com/img/contaxPreview.jpg" alt="contact web app"/>
+                  <div class="darker"></div>
+                  <span class="icon icon-address-book mobileHide"></span>
+                  <span class="tileTitle contact">Conta<span class="lastLetter">x</span></span>
+                </a>
+      
+                <a href="http://mathieulavoie-lamer.com/antemasque/" target="_blank" class="col-xs-6">
+                  <img src="http://theaftermath.xposedbones.com/img/antemasquePreview.jpg" alt="Antemasque"/>
+                  <div class="darker"></div>
+                  <span class="icon icon-cassette mobileHide"></span>
+                  <span class="tileTitle">antemasqu<span class="lastLetter">e</span></span>
+                </a>
+      
+                <a href="https://codepen.io/theaftermath87/" target="_blank" class="col-xs-6">
+                  <img src="http://theaftermath.xposedbones.com/img/codepenPreview.jpg" alt="Codepen"/>
+                  <div class="darker"></div>
+                  <span class="icon icon-codepen mobileHide"></span>
+                  <span class="tileTitle">codepe<span class="lastLetter">n</span></span>
+                </a>
+              </div> -->
+            </section>
+      
+            
+      
+            <!--aboutMe Section-->
+            <section id="aboutMe" class="container">
+              <div class="half yellow col-md-6 col-md-push-6">
+                <div class="yellowContain">
+                  <div class="yellowBox">
+                    <span class="boxTitle">About Me</span>
+                    <div class="boxText">
+                      <p><p>Hi! my name is <span class="bold">Mathieu Lavoie-Lamer</span>. I'm 28 years old and I am new in the industry. Yes, you've read right, I'm 28 and I'm new! I code for almost a year now and IT IS A TRUE PASSION! I just love it! So if you're looking for a true passionate, devoted, curious, self-teaching, responsible person who loves to resolve problems and learn new things, I'm your man!</p>
+            <p>Despite the fact that I'm coding for a little less than a year, my knowledge is already way sufficiant to get a job in that domain. I've participated at a 2 weeks internship in <a href="http://www.akufen.ca/" class="bold" target="_blank">Akufen Atelier Créatif</a> and i'm currently mentored by a five years of experience Full-Stack developer. For Now, I'm fully confortable with most of the tools used in the industry and I'm seeking to learn <span class="bold">Angular</span> and <span class="bold">React</span> frameworks soon.</p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div id="gifCont" class="half col-md-6 col-md-pull-6 neighbor">
+                <img src="https://sun9-58.userapi.com/c636618/v636618276/5a7c9/8JfSSXirT4o.jpg"/>
+                <div class="darker"></div>
+                <div class="statsDiv">
+                  <h2>my Skills</h2>
+      
+                  <div class="dataProg">
+      
+                    <div class="statHolder">
+                      <h4>HTML5</h4>
+                      <div class="bar">
+                        <div data-prog='85' class="progressBar"></div>
+                      </div>
+                    </div>
+      
+                    <div class="statHolder">
+                      <h4>CSS3 (SASS)</h4>
+                      <div class="bar">
+                        <div data-prog='77' class="progressBar"></div>
+                      </div>
+                    </div>
+      
+                    <div class="statHolder">
+                      <h4>JAVASCRIPT / jQuery</h4>
+                      <div class="bar">
+                        <div data-prog='75' class="progressBar"></div>
+                      </div>
+                    </div>
+      
+                    <div class="statHolder">
+                      <h4>GRUNT</h4>
+                      <div class="bar">
+                        <div data-prog='65' class="progressBar"></div>
+                      </div>
+                    </div>
+      
+                    <div class="statHolder">
+                      <h4>BOOTSTRAP</h4>
+                      <div class="bar">
+                        <div data-prog='70' class="progressBar"></div>
+                      </div>
+                    </div>
+      
+                    <div class="statHolder">
+                      <h4>PHOTOSHOP</h4>
+                      <div class="bar">
+                        <div data-prog='75' class="progressBar"></div>
+                      </div>
+                    </div>
+      
+                  </div>
+                </div>
+              </div>
+            </section>
+      
+      
+            <!--whyMe Section-->
+            <section id="whyMe" class="container yellow">
+              <div class="half col-md-12" style="height: 550px">
+                <div class="yellowContain">
+                  <div class="yellowBox"><span class="boxTitle">Conclusion</span>
+                    <div class="boxText">
+                      <p>So, it's a no-brainer! You have the opportunity to hire someone who, despite his young experience, will be able to please your expectations and, with time, will even overpass them! Someone who's passionate about a whole variety of domains including photography, video, visual arts, music, cinema and who is continually seeking to learn more on everything!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+      
+          </div>
+        </div>
+        <%- include(rootPath + 'partials/footer'); %>
+    </body>
+    <link rel="script" type="text/script" href="script/portfolio.js"/>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js'></script><script  src="./script.js"></script>
+    <script>
+      'use strict';
+
+var App,
+	Animate,
+	$header		=	$('#header'),
+	$myName		=	$('#myName'),
+	nameHolder	=	document.getElementById('myName'),
+	$svg		=	document.getElementById('svgCont'),
+	$stickyPos	=	$myName.offset().top,
+	$bars 		=	$('.progressBar'),
+	$main		=	document.getElementById('mainContent'),
+	winHeight	=	window.innerHeight,
+	backPos		=	-350,
+	trigger		=	false,
+	faderOff	=	false,
+	burger 		=	document.getElementById('burger'),
+	menuOpen 	=	false,
+	body		=	document.getElementsByTagName('body'),
+	header		=	document.getElementById('headMenu'),
+	$input		=	$('.textInput'),
+	$form		=	$('#submitBtn');
+
+	
+
+// --- zApp ---
+
+App = {
+	init: function() {
+
+
+		var wScroll 	= window.pageYOffset,
+			parallax	= wScroll/2,
+			parallaxMax	= Math.min(parallax, $stickyPos-175),
+			scrollLim 	= Math.max(Math.min(wScroll/600 + 0.1,0.8),0),
+			$headDarker	= document.getElementById('headDarker'),
+			$headerJS	= document.getElementById('header');
+
+		if ($headerJS.offsetHeight == 575) {
+			backPos = -278;
+		}
+
+		$headerJS.style.backgroundPosition = 'center '+ (backPos + -parallaxMax) +'px';
+		$headDarker.style.backgroundColor = 'rgba(0,0,0,'+(scrollLim-0.1)+')';
+		
+		if (wScroll >= $stickyPos) {
+			$header.addClass('sticky').css({ top: -$stickyPos });
+			$main.style.marginTop = $headerJS.offsetHeight+'px';
+		}else {
+			$main.style.marginTop = 0+'px';
+			$header.removeClass('sticky');
+			$headerJS.style.top = 0;
+			$svg.style.transform = 'translateY('+ -parallax +'px)';
+			nameHolder.style.transform = 'scale('+ (1-parallax/900) +')';
+		}
+	},
+
+	isMobile: function(agent) {
+
+		if (agent == null) {
+			agent = /Mobile|Android|BlackBerry|PlayBook|Nokia|iPhone|iPad|iPod/;
+		}
+
+		var uAgent	= navigator.userAgent;
+
+			if(agent.test(uAgent)) {
+				return true;
+			} else {
+				return false;
+			}
+
+	},
+
+	progressBar: function() {
+
+		if (!trigger) {
+			var bars 	= document.getElementsByClassName('progressBar'),
+				qty		= bars.length-1,
+				i = 0;
+
+				
+			while (i <= qty) {
+				var	who		= bars[i],
+					value	= who.getAttribute('data-prog');
+
+				who.style.width = value+'%';
+				i++;
+			}
+			trigger = true;
+		}
+	},
+
+	headScroll: function() {
+
+			var wScroll 	= window.pageYOffset,
+				parallax	= wScroll/2,
+				scrollLim 	= Math.max(Math.min(wScroll/600 + 0.1,0.9),0),
+				$headDarker	= document.getElementById('headDarker'),
+				$headerJS	= document.getElementById('header');
+
+			if (wScroll >= $stickyPos) {
+				$header.addClass('sticky').css({ top: -$stickyPos });
+				$main.style.marginTop = $headerJS.offsetHeight+'px';
+			}else {
+				$header.removeClass('sticky');
+				$main.style.marginTop = 0+'px';
+				$headerJS.style.backgroundPosition = 'center '+ (backPos + -parallax) +'px';
+				$headerJS.style.top = 0;
+				$headDarker.style.backgroundColor = 'rgba(0,0,0,'+scrollLim+')';
+				$svg.style.transform = 'translateY('+ -parallax +'px)';
+				$svg.style.opacity = 1.1 - scrollLim;
+				nameHolder.style.transform = 'scale('+ (1-parallax/900) +')';
+				nameHolder.style.bottom = (64 - (parallax/10))+'px';
+			}
+	},
+
+	yellowBoxSize: function() {
+		var yellow 		= document.querySelectorAll('.yellow'),
+			neighbor	= document.querySelectorAll('.neighbor');
+
+		for (var i = 0; i < neighbor.length; i++) {
+			var neighborH = neighbor[i].offsetHeight;
+
+			yellow[i].style.height = neighborH+'px';
+		}
+	},
+
+	myWorkYellowSize: function() {
+		var half			=	document.getElementById('yellowMyWork'),
+			picGrid			=	document.getElementById('picGrid'),
+			height			=	picGrid.offsetHeight * 0.75,
+			marginHeight	=	(picGrid.offsetHeight * 0.25) / 2;
+
+		half.style.height	= height + 'px';
+		half.style.marginTop	=  marginHeight + 'px';
+	},
+
+	progressBarReset: function() {
+		
+		if (trigger) {
+			
+			TweenLite.set($bars, { width: 0 });
+			trigger = false;
+		}
+	},
+
+	mobileHeader: function() {
+		var winHeight 	= window.innerHeight,
+			header 		= document.getElementById('header');
+
+			header.style.height = winHeight+'px';
+	},
+
+	contactMail: function(formID) {
+		
+		var formData	=	$(formID).serialize(),
+			language	=	$('html').attr('lang'),
+			succMess,
+			failMess;
+
+
+		if (language === 'en') {
+			succMess = 'Thanks! You\'re message has been sent successfully.';
+			failMess = 'An error has occured while sending your message. You can retry or click <a href="mailto:theaftermath87@gmail.com" class="mailLink">here</a> to write me via your regular mail client.';
+		} else if (language === 'fr') {
+			succMess = 'Merci! Votre message été envoyé avec succès.';
+			failMess = 'Une erreur est survenue lors de l\'envoie de votre message. Vous pouvez réessayer ou cliquez <a href="mailto:theaftermath87@gmail.com" class="mailLink">ici</a> pour m\'écrire via votre service courriel habituel.';
+		}
+
+		$.ajax({
+			url: 'contact.php',
+			type: 'POST',
+			data: formData,
+		})
+		.done(function() {
+			$('.mailSuccess').html(succMess);
+			$('.textInput, #textArea').val('');
+			setTimeout(function() {
+				$('input').blur();
+			},500);
+		})
+		.fail(function() {
+			$('.mailSuccess').html(failMess);
+		});
+		
+	}
+};
+// --- zApp End ---
+
+
+// --- Animations ---
+
+Animate = {
+
+	autoScroll: function(who) {
+
+		var	target	=	who.attr('href'),
+			minus;
+
+
+		if (window.matchMedia('(min-width:1200px)').matches) {
+			minus = ((window.innerHeight - $(target).height())/2)+65;
+		} else {
+			minus = 50;
+		}
+
+		TweenLite.to($('body,html'), 2,{ ease: Power2.easeInOut, scrollTop:  $(target).offset().top - minus });
+
+	},
+
+	progressBar: function() {
+
+		if (!trigger) {
+			var bars 	=	document.getElementsByClassName('progressBar'),
+				qty		=	bars.length-1,
+				i = 0;
+
+				
+			while (i <= qty) {
+				var	who		= bars[i],
+					value	= who.getAttribute('data-prog'),
+					rdm		= Math.random()*(2000-1500+1)+1500;
+
+				TweenLite.to($(who), rdm/1000, { ease: Power2.easeInOut, width: value+'%' });
+				i++;
+			}
+			trigger = true;
+		}
+	},
+
+	placeholdersBlur: function(who) {
+		var placeholder = who.siblings('.placeholder'),
+			value		= who.val();
+
+		if (value === '') {
+			TweenLite.to(placeholder, 0.2, { ease: Power2.easeInOut, top: 4, fontSize: 18, color: '#FFF' });
+		}
+	},
+
+	placeholdersFocus: function(who) {
+		var placeholder = who.siblings('.placeholder');
+
+		TweenMax.to(placeholder, 0.3, { ease: Power2.easeInOut, top: -15, color: '#F1CA10' });
+	},
+
+	mobileMenuOpen: function(who) {
+
+		who.addClass('burgerClosed');
+		header.style.left = 0+'px';
+		$('#headMenu').addClass('menuOpened');
+		TweenLite.set($('body, html'), { overflow: 'hidden' });
+
+	},
+
+	mobileMenuClose: function(who) {
+
+		who.removeClass('burgerClosed');
+		$('#headMenu').removeClass('menuOpened');
+		setTimeout(function() {
+			header.style.left = -100+'%';
+		},500);
+		TweenLite.set($('body, html'), { overflow: 'scroll' });
+	}
+
+
+}
+// --- Animations End ---
+
+
+// --- Header ---
+
+$(document).ready(function() {
+	
+	if (window.matchMedia('(min-width:1025px)').matches && !App.isMobile()) {
+		App.init();
+	} else if (window.matchMedia('(max-width:1024px)').matches) {
+		App.mobileHeader();
+	}
+});
+
+$('.menu li a').on('click', function(event) {
+	event.preventDefault();
+	Animate.autoScroll($(this));
+	if (window.matchMedia('(max-width:1024px)').matches) {
+		Animate.mobileMenuClose($('#burger'));
+		menuOpen = false;
+	}
+});
+
+window.onscroll = function() {
+
+	if (window.matchMedia('(min-width:1025px)').matches && !App.isMobile()) {
+		App.headScroll();;
+	}
+
+};
+
+burger.onclick = function() {
+	if (!menuOpen && window.matchMedia('(max-width:1024px)').matches) {
+		Animate.mobileMenuOpen($(this));
+		menuOpen = true;
+	} else if (menuOpen && window.matchMedia('(max-width:1024px)').matches){
+		Animate.mobileMenuClose($(this));
+		menuOpen = false;
+	}
+}
+
+$('header').on('swipeleft', function () {
+
+	if (menuOpen && window.matchMedia('(max-width:1024px)').matches){
+		Animate.mobileMenuClose($('#burger'));
+		menuOpen = false;
+	}
+});
+
+$('body, html').on('swiperight', function() {
+	if (!menuOpen && window.matchMedia('(max-width:1024px)').matches && App.isMobile()) {
+		Animate.mobileMenuOpen($('#burger'));
+		menuOpen = true;
+	}
+});
+
+
+$(window).on('orientationchange', function() {
+	if (App.isMobile()) {
+		setTimeout(function() {
+			App.mobileHeader();
+		},250);
+	}
+});
+// --- Header End ---
+
+
+// --- Main Content ---
+
+window.onload = function() {
+
+	var scrollOffset	= window.pageYOffset,
+		positioning		= $('body').offset().top - (window.innerHeight / 2.5),
+		positioning2	= ($('#aboutMe').offset().top + $('#aboutMe').height() - (window.innerHeight / 4));
+
+	if (!faderOff) {
+		setTimeout(function(){
+			$('.fader').fadeOut(1000);
+		}, 100);
+		faderOff = true;
+	}
+
+	if (window.matchMedia('(min-width: 991px)').matches) {
+
+		App.yellowBoxSize();
+		App.myWorkYellowSize();
+
+		if (scrollOffset > positioning && scrollOffset < positioning2) {
+			Animate.progressBar();
+		}
+	} else {
+		App.progressBar();
+	}
+};
+
+$(window).on('resize', function(){
+	
+	if (window.matchMedia('(min-width: 991px)').matches) {
+		App.yellowBoxSize();
+		App.myWorkYellowSize();
+	}
+});
+
+$(window).on('scroll', function() {
+
+	var scrollOffset	= window.pageYOffset,
+		positioning1	= $('#aboutMe').offset().top - (window.innerHeight / 2.5),
+		positioning2	= $('#aboutMe').offset().top - (window.innerHeight),
+		positioning3	= ($('#aboutMe').offset().top + $('#aboutMe').height() - (window.innerHeight / 4));
+
+	if (window.matchMedia('(min-width: 1200px)').matches && !App.isMobile()) {
+		if (scrollOffset > positioning1 && scrollOffset < positioning3) {
+			Animate.progressBar();
+		} else if (scrollOffset < positioning2 || scrollOffset > positioning3) {
+			App.progressBarReset();
+		}
+	} else {
+		App.progressBar();
+	}
+});
+// --- Main Content End ---
+
+
+// --- Forms ---
+
+// Fake placeholders
+
+$input.on('focus', function() {
+	Animate.placeholdersFocus($(this));
+	$('.mailSuccess').html('');
+});
+
+$('#textArea').on('keypress', function() {
+	var textVal	= $('#textArea').val();
+
+	if (textVal.length > 4) {
+		$('.mailSuccess').html('');
+	}
+});
+
+$input.on('blur', function() {
+	Animate.placeholdersBlur($(this));
+});
+
+
+
+// Form management
+
+$form.on('click', function(event) {
+	event.preventDefault();
+	var nameVal	= $('#nameInput').val(),
+		mailVal	= $('#mailInput').val(),
+		cieVal	= $('#cieInput').val,
+		textVal	= $('#textArea').val();
+	
+	if (nameVal.length <= 1) {
+		$('.mailSuccess').html('You must at least enter a name!');
+	} else if (textVal.length <= 5) {
+		event.preventDefault();
+		if (textVal.length === 0) {
+			$('.mailSuccess').html('Hhmmm... What\s the point of contacting me if there\'s no message?!')
+		} else {
+			$('.mailSuccess').html('I doubt you can tell me something in 5 letters or less...')
+		}
+	} else {
+		App.contactMail('#emailForm');
+	}
+});
+// --- Forms End ---
+    </script>
+</html>
