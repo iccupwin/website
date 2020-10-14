@@ -25,7 +25,7 @@ app.listen(8080, function () {
 });
 
 // YOUTUBE API AUTH
-let youtubeToken = "abc";
+let youtubeToken = 'AIzaSyADi2DdPMdx7z5MDeYOdF2bYevF_97Y_xE';
 const youtubeRedirect = "http://localhost:8080/api/yt-auth";
 let uploadPlaylist = "123";
 let youtubeUploads = [];
