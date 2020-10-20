@@ -1,4 +1,4 @@
-onst { send, createError, run } = require("micro");
+const { send, createError, run } = require("micro");
 const fetch = require("isomorphic-unfetch");
 
 const profile = async (req, res) => {
